@@ -1,0 +1,120 @@
+.navbar {
+    background: $black;
+    height: 94px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8% 25px 8%;
+    position: fixed;
+    width: 84%;
+    z-index: 2;
+    .logo {
+        height: 30px;
+    }
+    .navListBtn {
+        .navList {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            .listItem {
+                box-sizing: border-box;
+                margin: 0 40px 0 0;
+                &:hover {
+                    border-bottom: white 4px solid;
+                }
+                .navItem {
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    padding: 0 10px 0px 10px;
+                }
+            }
+            .listItemBtn {
+                align-self: flex-start;
+            }
+        }
+        .menu, .close {
+            display: none;
+            color: white;
+        }
+    }
+}
+.navbarMini {
+    position: fixed;
+    top: 94px;
+    z-index: 3;
+    width: 100vw;
+    height: calc(100vh - 94px);
+    background: $black;
+    padding: 25px;
+    box-sizing: border-box;
+    .navListMini {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 50%;
+        .navItem {
+            width: 100%;
+            padding: 25px 0 25px 0;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            &:hover {
+                transition: background 1000ms;
+                background: white;
+                transition: color 1000ms;
+                color: black;
+            }
+        }
+        .listItemBtn {
+            width: 40%;
+            min-width: 140px;
+            max-width: 240px;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .navbar {
+        padding: 25px 5% 25px 5%;
+        width: 90%;
+        .navListBtn {
+            .navList {
+                display: none;
+            }
+            .menu {
+                display: inline-block;
+            }
+        }
+    }
+    .true {
+        animation: showMenu linear 500ms;
+    }
+    .false {
+        animation: hideMenu linear 500ms;
+    }
+    @keyframes showMenu {
+        0% {
+            left: -100%;
+            background: none;
+        }
+        100% {
+            left: 0;
+            background: $black;
+        }
+    }
+    @keyframes hideMenu {
+        0% {
+            left: 0;
+            background: $black;
+        }
+        100% {
+            left: -100%;
+            background: none;
+        }
+    }
+}
+

@@ -1,0 +1,86 @@
+.card {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 5px 5px 10px rgb(145, 145, 145);
+    margin-bottom: 3%;
+    .pictureCard {
+        width: 100%;
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 10px 10px 0 0;
+        transition: background-size 500ms;
+        &:hover {
+            transition: background-size 500ms;
+            background-size: 120%;
+        }
+    }
+    .titleCard {
+        font-weight: bold;
+        font-size: 0.9em;
+        padding: 0 0 5% 5%;
+    }
+    .typeCard {
+        background: rgb(24, 129, 222);
+        color: white;
+        font-size: 0.7em;
+        padding: 5px;
+    }
+}
+.big {
+    width: 495px;
+    height: 400px;
+    .pictureCard {
+        height: 85%;
+    }
+    .typeCard {
+        position: absolute;
+        bottom: 15%;
+        left: 2%;
+    }
+}
+.small {
+    width: 320px;
+    height: 230px;
+    .pictureCard {
+        height: 75%;
+    }
+    .typeCard {
+        position: absolute;
+        bottom: 25%;
+        left: 2%;
+    }
+}
+
+
+@media screen and (max-width: 1237px) {
+    .small {
+        width: 495px;
+        height: 400px;
+        .pictureCard {
+            height: 85%;
+        }
+        .typeCard {
+            position: absolute;
+            bottom: 15%;
+            left: 2%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .small, .big {
+        width: 100%;
+        .pictureCard {
+            height: 82%;
+        }
+        .typeCard {
+            position: absolute;
+            bottom: 18%;
+            left: 2%;
+        }
+    }
+}
