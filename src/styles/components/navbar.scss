@@ -13,6 +13,8 @@
     }
     .navListBtn {
         height: 100%;
+        display: flex;
+        align-items: center;
         .navList {
             list-style: none;
             display: flex;
@@ -44,7 +46,6 @@
             }
         }
         .btnMiniMenu {
-            display: flex;
             .menu, .close {
                 display: none;
                 color: white;
