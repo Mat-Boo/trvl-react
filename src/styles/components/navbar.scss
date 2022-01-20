@@ -1,10 +1,10 @@
 .navbar {
     background: $black;
-    height: 94px;
+    height: 74px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 8% 25px 8%;
+    padding: 0 8% 0 8%;
     position: fixed;
     width: 84%;
     z-index: 2;
@@ -12,13 +12,18 @@
         height: 30px;
     }
     .navListBtn {
+        height: 100%;
         .navList {
             list-style: none;
             display: flex;
             align-items: center;
+            height: 100%;
             .listItem {
                 box-sizing: border-box;
                 margin: 0 40px 0 0;
+                height: 100%;
+                display: flex;
+                align-items: center;
                 &:hover {
                     border-bottom: white 4px solid;
                 }
@@ -30,24 +35,30 @@
                 }
             }
             .listItemBtn {
-                align-self: flex-start;
+                &:hover {
+                    border-bottom: none;
+                }
+                .navItemBtn {
+                    text-decoration: none;
+                }
             }
         }
-        .menu, .close {
-            display: none;
-            color: white;
+        .btnMiniMenu {
+            display: flex;
+            .menu, .close {
+                display: none;
+                color: white;
+            }
         }
     }
 }
 .navbarMini {
     position: fixed;
-    top: 94px;
+    top: 74px;
     z-index: 3;
     width: 100vw;
-    height: calc(100vh - 94px);
+    height: calc(100vh - 74px);
     background: $black;
-    padding: 25px;
-    box-sizing: border-box;
     .navListMini {
         list-style: none;
         display: flex;
@@ -79,14 +90,17 @@
 
 @media screen and (max-width: 880px) {
     .navbar {
-        padding: 25px 5% 25px 5%;
+        padding: 0 5% 0 5%;
         width: 90%;
         .navListBtn {
             .navList {
                 display: none;
             }
-            .menu {
-                display: inline-block;
+            .btnMiniMenu {
+
+                .menu {
+                    display: inline-block;
+                }
             }
         }
     }
